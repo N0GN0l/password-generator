@@ -9,19 +9,20 @@ class Main {
         String[] symbols = { "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{",
                 "]", "}", "\\", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?" };
         for (int i = 0; i <= ((int) (Math.random() * 15)); i++) {
-            if (((int) Math.random() * 10) % 2 == 0) {
+            int tempNum = ((int) Math.random() * 10);
+            if (tempNum % 2 == 0) {
                 password += symbols[(int) (Math.random() * symbols.length)];
                 password += symbols[(int) (Math.random() * symbols.length)];
             } else {
                 password += symbols[(int) (Math.random() * symbols.length)];
             }
-            if (((int) Math.random() * 10) % 2 == 0) {
+            if (tempNum % 2 == 0) {
                 password += numbers[(int) (Math.random() * numbers.length)];
                 password += numbers[(int) (Math.random() * numbers.length)];
             } else {
                 password += numbers[(int) (Math.random() * numbers.length)];
             }
-            if (((int) Math.random() * 10) % 2 == 0) {
+            if (tempNum % 2 == 0) {
                 password += letters[(int) (Math.random() * letters.length)];
                 password += letters[(int) (Math.random() * letters.length)];
             } else {
