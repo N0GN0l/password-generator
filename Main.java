@@ -11,8 +11,17 @@ class Main {
             "{",
             "]", "}", "\\", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?" };
 
-    public static void main(String[] args) {
+    public static void randomValue(String[] array) {
+        int tempNum = (int) (Math.random() * 10);
+        if (tempNum % 2 == 0) {
+            password += array[(int) (Math.random() * array.length)];
+            password += array[(int) (Math.random() * array.length)];
+        } else {
+            password += array[(int) (Math.random() * array.length)];
+        }
+    }
 
+    public static void main(String[] args) {
         try (Scanner myObj = new Scanner(System.in)) {
             String passwordName;
             // Enter username and press Enter
@@ -27,15 +36,5 @@ class Main {
             System.out.print(passwordName + " password: ");
         }
         System.out.println(password);
-    }
-
-    public static void randomValue(String[] array) {
-        int tempNum = (int) (Math.random() * 10);
-        if (tempNum % 2 == 0) {
-            password += array[(int) (Math.random() * array.length)];
-            password += array[(int) (Math.random() * array.length)];
-        } else {
-            password += array[(int) (Math.random() * array.length)];
-        }
     }
 }
