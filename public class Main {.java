@@ -8,8 +8,9 @@ class Main {
                 "s", "t", "u", "v", "w", "x", "y", "z" };
         String[] symbols = { "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{",
                 "]", "}", "\\", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?" };
-        for (int i = 0; i <= ((int) (Math.random() * 15)); i++) {
-            int tempNum = ((int) Math.random() * 10);
+        for (int i = 0; i <= ((int) (Math.random() * 15) + 3); i++) {
+            int tempNum = (int) (Math.random() * 10);
+            // System.out.println(tempNum);
             if (tempNum % 2 == 0) {
                 password += symbols[(int) (Math.random() * symbols.length)];
                 password += symbols[(int) (Math.random() * symbols.length)];
@@ -26,7 +27,7 @@ class Main {
                 password += letters[(int) (Math.random() * letters.length)];
                 password += letters[(int) (Math.random() * letters.length)];
             } else {
-                password += letters[(int) (Math.random() * letters.length)];
+                password += letters[(int) (Math.random() * letters.length)].toUpperCase();
             }
         }
         System.out.println(password);
