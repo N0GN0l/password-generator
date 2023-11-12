@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
@@ -8,27 +9,35 @@ class Main {
                 "s", "t", "u", "v", "w", "x", "y", "z" };
         String[] symbols = { "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{",
                 "]", "}", "\\", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?" };
-        for (int i = 0; i <= ((int) (Math.random() * 15) + 3); i++) {
-            int tempNum = (int) (Math.random() * 10);
-            // System.out.println(tempNum);
-            if (tempNum % 2 == 0) {
-                password += symbols[(int) (Math.random() * symbols.length)];
-                password += symbols[(int) (Math.random() * symbols.length)];
-            } else {
-                password += symbols[(int) (Math.random() * symbols.length)];
+        try (Scanner myObj = new Scanner(System.in)) {
+            String passwordName;
+            // Enter username and press Enter
+            System.out.println("Enter website");
+            passwordName = myObj.nextLine();
+            for (int i = 0; i <= ((int) (Math.random() * 15) + 3); i++) {
+                int tempNum = (int) (Math.random() * 10);
+                // System.out.println(tempNum);
+                if (tempNum % 2 == 0) {
+                    password += symbols[(int) (Math.random() * symbols.length)];
+                    password += symbols[(int) (Math.random() * symbols.length)];
+                } else {
+                    password += symbols[(int) (Math.random() * symbols.length)];
+                }
+                if (tempNum % 2 == 0) {
+                    password += numbers[(int) (Math.random() * numbers.length)];
+                    password += numbers[(int) (Math.random() * numbers.length)];
+                } else {
+                    password += numbers[(int) (Math.random() * numbers.length)];
+                }
+                if (tempNum % 2 == 0) {
+                    password += letters[(int) (Math.random() * letters.length)];
+                    password += letters[(int) (Math.random() * letters.length)];
+                } else {
+                    password += letters[(int) (Math.random() * letters.length)].toUpperCase();
+                }
+
             }
-            if (tempNum % 2 == 0) {
-                password += numbers[(int) (Math.random() * numbers.length)];
-                password += numbers[(int) (Math.random() * numbers.length)];
-            } else {
-                password += numbers[(int) (Math.random() * numbers.length)];
-            }
-            if (tempNum % 2 == 0) {
-                password += letters[(int) (Math.random() * letters.length)];
-                password += letters[(int) (Math.random() * letters.length)];
-            } else {
-                password += letters[(int) (Math.random() * letters.length)].toUpperCase();
-            }
+            System.out.print(passwordName + " password: ");
         }
         System.out.println(password);
     }
